@@ -28,5 +28,12 @@ namespace SortingTests
             Assert.Throws<IndexOutOfRangeException>(delegate {
                 Sort.MergeSort(a, 0, a.Length - 1); });
         }
+        [Test]
+        public void SortIfItemsSort()
+        {
+            int[] a = {1,2,3,4,5};
+            string result = string.Join(", ", Sort.MergeSort(a, 0, a.Length - 1));
+            Assert.That(result, Is.EqualTo("1, 2, 3, 4, 5"));
+        }
     }
 }
